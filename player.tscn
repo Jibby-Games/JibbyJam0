@@ -16,3 +16,6 @@ shape = SubResource( 1 )
 modulate = Color( 0.101961, 1, 0, 1 )
 position = Vector2( -9.53674e-07, 0 )
 texture = ExtResource( 2 )
+
+[node name="Muzzle" type="Position2D" parent="."]
+position = Vector2( 12, -38 )
