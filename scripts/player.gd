@@ -3,6 +3,7 @@ extends KinematicBody2D
 export var speed = 200
 export var friction = 0.01
 export var acceleration = 0.1
+export(PackedScene) var bullet = preload("res://bullet.tscn")
 
 var velocity = Vector2()
 
@@ -26,3 +27,12 @@ func _physics_process(delta):
 	else:
 		velocity = lerp(velocity, Vector2.ZERO, friction)
 	velocity = move_and_slide(velocity)
+
+	if Input.is_action_pressed("shoot"):
+		shoot()
+
+
+func shoot():
+	var b = bullet.instance()
+	owner.add_child(b)
+	b.transform = $Muzzle.global_transform
