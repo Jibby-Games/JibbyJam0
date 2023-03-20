@@ -13,6 +13,7 @@ func _ready():
 
 func get_heading():
 	var heading = Vector2()
+<<<<<<< HEAD
 	
 	var target = Vector2()
 	if is_instance_valid(player_pawn):
@@ -22,17 +23,28 @@ func get_heading():
 	
 	heading = target - self.global_position
 	
+=======
+
+	var player_loc = player_pawn.global_position
+
+	heading = player_loc - self.global_position
+
+>>>>>>> 151712cf7c074ecebdecdc8c37f56ab8d5c3007c
 	return heading
 
 func _physics_process(delta):
 	var direction = get_heading()
-	
+
 	look_at(direction)
-	
+
 	if direction.length() > 0:
 		velocity = lerp(velocity, direction.normalized() * speed, acceleration)
 	else:
 		velocity = lerp(velocity, Vector2.ZERO, friction)
-		
+
 	velocity = move_and_slide(velocity)
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 151712cf7c074ecebdecdc8c37f56ab8d5c3007c
