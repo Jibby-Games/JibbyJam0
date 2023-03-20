@@ -11,5 +11,5 @@ dest_files=[ "res://.import/shephard tone.mp3-738b5145b90fe483d9c6c28a431a0303.m
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

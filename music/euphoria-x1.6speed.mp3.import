@@ -11,5 +11,5 @@ dest_files=[ "res://.import/euphoria-x1.6speed.mp3-0d6e3e55e11b50240fb2a199cd11f
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
