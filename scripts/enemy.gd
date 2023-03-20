@@ -54,5 +54,6 @@ func _physics_process(delta):
 
 func _exit_tree() -> void:
 	var sound = death_sounds[randi() % death_sounds.size()]
+	Globals.add_score()
 	Sounds.play(sound)
 	Sounds.play("res://sounds/Squelch.mp3")
