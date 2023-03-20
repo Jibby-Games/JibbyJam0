@@ -14,6 +14,10 @@ var death_sounds = [
 	"res://sounds/Scream_1.mp3",
 	"res://sounds/Weeping.mp3",
 	"res://sounds/Death_Gurgle.mp3",
+	"res://sounds/Thats_what_you_get.mp3",
+	"res://sounds/Ouch.mp3",
+	"res://sounds/Grunt.mp3",
+	"res://sounds/Blugh.mp3",
 ]
 
 func _ready():
@@ -51,3 +55,4 @@ func _physics_process(delta):
 func _exit_tree() -> void:
 	var sound = death_sounds[randi() % death_sounds.size()]
 	Sounds.play(sound)
+	Sounds.play("res://sounds/Squelch.mp3")

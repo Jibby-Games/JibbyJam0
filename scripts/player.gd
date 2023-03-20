@@ -37,6 +37,7 @@ func _physics_process(delta):
 
 
 func player_died():
+	Sounds.play("res://sounds/Squelch.mp3")
 	print("Player has died!")
 
 	queue_free()

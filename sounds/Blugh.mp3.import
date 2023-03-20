@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Blugh.mp3-58c0297215a34d6330d3db571cef34ee.mp3str"
+
+[deps]
+
+source_file="res://sounds/Blugh.mp3"
+dest_files=[ "res://.import/Blugh.mp3-58c0297215a34d6330d3db571cef34ee.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
