@@ -30,9 +30,19 @@ func _physics_process(delta):
 
 	if Input.is_action_pressed("shoot"):
 		shoot()
+	
 
+func player_died():
+	print("Player has died!")
+	
+	queue_free()
 
 func shoot():
 	var b = bullet.instance()
 	owner.add_child(b)
 	b.transform = $Muzzle.global_transform
+
+
+func _on_Area2D_body_entered(body):
+	if body.name == "enemy":
+		player_died()
