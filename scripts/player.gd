@@ -3,9 +3,11 @@ extends KinematicBody2D
 export var speed = 200
 export var friction = 0.01
 export var acceleration = 0.1
+export var reload_time = 0.5
 export(PackedScene) var bullet = preload("res://bullet.tscn")
 
 var velocity = Vector2()
+var current_reload_time = 0
 
 func get_input():
 	var input = Vector2()
@@ -28,7 +30,9 @@ func _physics_process(delta):
 		velocity = lerp(velocity, Vector2.ZERO, friction)
 	velocity = move_and_slide(velocity)
 
-	if Input.is_action_pressed("shoot"):
+	current_reload_time -= delta
+	if Input.is_action_pressed("shoot") and current_reload_time < 0:
+		current_reload_time = reload_time
 		shoot()
 
 
