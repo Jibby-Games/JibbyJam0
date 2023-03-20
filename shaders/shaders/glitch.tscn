@@ -5,8 +5,8 @@
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 1 )
-shader_param/shake_power = 0.03
-shader_param/shake_rate = 0.2
+shader_param/shake_power = 0.005
+shader_param/shake_rate = 0.02
 shader_param/shake_speed = 5.0
 shader_param/shake_block_size = 30.5
 shader_param/shake_color_rate = 0.01
