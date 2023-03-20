@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export var speed = 200
 export var reload_time = 0.5
+export var bullet_spped_mult = 1
 
 export var acceleration = 0.1
 export var friction = 0.01
@@ -24,7 +25,7 @@ func get_input():
 	return input
 
 func _physics_process(delta):
-	look_at(get_global_mouse_position())
+	# look_at(get_global_mouse_position())
 	var direction = get_input()
 	if direction.length() > 0:
 		velocity = lerp(velocity, direction.normalized() * speed, acceleration)
@@ -47,7 +48,9 @@ func player_died():
 func shoot():
 	var b = bullet.instance()
 	owner.add_child(b)
+	b.speed *= bullet_spped_mult
 	b.transform = $Muzzle.global_transform
+	b.look_at(get_global_mouse_position())
 	Globals.camera.add_trauma(0.3)
 	Sounds.play("res://sounds/Pew.mp3")
 
