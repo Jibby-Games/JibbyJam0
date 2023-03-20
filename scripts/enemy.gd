@@ -10,6 +10,11 @@ export var acceleration_range = 0.5
 
 var velocity = Vector2()
 var player_pawn
+var death_sounds = [
+	"res://sounds/Scream_1.mp3",
+	"res://sounds/Weeping.mp3",
+	"res://sounds/Death_Gurgle.mp3",
+]
 
 func _ready():
 	player_pawn = get_parent().get_node("player")
@@ -43,3 +48,6 @@ func _physics_process(delta):
 
 	velocity = move_and_slide(velocity)
 
+func _exit_tree() -> void:
+	var sound = death_sounds[randi() % death_sounds.size()]
+	Sounds.play(sound)
