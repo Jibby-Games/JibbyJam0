@@ -8,6 +8,10 @@
 [ext_resource path="res://scripts/pill_spawner.gd" type="Script" id=6]
 [ext_resource path="res://music/euphoria-x1.6speed.mp3" type="AudioStream" id=7]
 [ext_resource path="res://fonts/Roboto-Bold.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://background/Green Nebula/Green_Nebula_01-1024x1024.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFont" id=2]
+size = 120
 
 [sub_resource type="DynamicFontData" id=5]
 font_path = "res://fonts/Roboto-Bold.ttf"
@@ -29,6 +33,46 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 8 )
+
+[sub_resource type="Shader" id=3]
+code = "// HSV to RBG from https://www.rapidtables.com/convert/color/hsv-to-rgb.html
+// Rotation matrix from https://en.wikipedia.org/wiki/Rotation_matrix
+
+shader_type canvas_item;
+
+const float PI = 3.1415926535;
+
+uniform float strength: hint_range(0., 1.) = 0.5;
+uniform float speed: hint_range(0., 10.) = 0.5;
+uniform float angle: hint_range(0., 360.) = 0.;
+
+void fragment() {
+	float hue = UV.x * cos(radians(angle)) - UV.y * sin(radians(angle));
+	hue = fract(hue + fract(TIME  * speed));
+	float x = 1. - abs(mod(hue / (1./ 6.), 2.) - 1.);
+	vec3 rainbow;
+	if(hue < 1./6.){
+		rainbow = vec3(1., x, 0.);
+	} else if (hue < 1./3.) {
+		rainbow = vec3(x, 1., 0);
+	} else if (hue < 0.5) {
+		rainbow = vec3(0, 1., x);
+	} else if (hue < 2./3.) {
+		rainbow = vec3(0., x, 1.);
+	} else if (hue < 5./6.) {
+		rainbow = vec3(x, 0., 1.);
+	} else {
+		rainbow = vec3(1., 0., x);
+	}
+	vec4 color = texture(TEXTURE, UV);
+	COLOR = mix(color, vec4(rainbow, color.a), strength);
+}"
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
+shader_param/strength = 0.183
+shader_param/speed = 0.302
+shader_param/angle = 0.0
 
 [node name="level" type="Node2D"]
 script = ExtResource( 5 )
@@ -83,6 +127,17 @@ margin_right = 84.0
 margin_bottom = 75.0
 custom_fonts/font = SubResource( 1 )
 text = "Score: "
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 2048, 2048 )
+
+[node name="Background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+material = SubResource( 4 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 4096, 4096 )
 
 [connection signal="timeout" from="pill_spawner" to="pill_spawner" method="_on_pill_spawner_timeout"]
 [connection signal="timeout" from="mob_spawner" to="mob_spawner" method="_on_mob_spawner_timeout"]
