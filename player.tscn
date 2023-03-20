@@ -23,6 +23,7 @@ texture = ExtResource( 2 )
 
 [node name="Muzzle" type="Position2D" parent="."]
 position = Vector2( 35, 10 )
+scale = Vector2( 1, 1.00397 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
