@@ -15,7 +15,6 @@ func get_heading():
 	var heading = Vector2()
 	
 	var player_loc = player_pawn.global_position
-	print(player_loc)
 	
 	heading = player_loc - self.global_position
 	
@@ -32,3 +31,6 @@ func _physics_process(delta):
 		velocity = lerp(velocity, Vector2.ZERO, friction)
 		
 	velocity = move_and_slide(velocity)
+	
+	if player_pawn.is_colliding():
+		print("Player Collision!")
