@@ -34,17 +34,18 @@ func _physics_process(delta):
 	if Input.is_action_pressed("shoot") and current_reload_time < 0:
 		current_reload_time = reload_time
 		shoot()
-	
+
 
 func player_died():
 	print("Player has died!")
-	
+
 	queue_free()
 
 func shoot():
 	var b = bullet.instance()
 	owner.add_child(b)
 	b.transform = $Muzzle.global_transform
+	Globals.camera.add_trauma(0.3)
 
 
 func _on_Area2D_body_entered(body):

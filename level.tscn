@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/mob_spawner.gd" type="Script" id=2]
 [ext_resource path="res://powerup.tscn" type="PackedScene" id=3]
+[ext_resource path="res://camera.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/level.gd" type="Script" id=5]
 
 [node name="level" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="powerup" parent="." instance=ExtResource( 3 )]
 position = Vector2( 500, 300 )
@@ -12,7 +15,6 @@ collision_layer = 8
 collision_mask = 2
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 250, 150 )
 scale = Vector2( 1, 0.972319 )
 
 [node name="mob_spawner" type="Timer" parent="."]
@@ -21,3 +23,6 @@ autostart = true
 script = ExtResource( 2 )
 
 [connection signal="timeout" from="mob_spawner" to="mob_spawner" method="_on_mob_spawner_timeout"]
+[node name="camera" parent="." instance=ExtResource( 4 )]
+current = true
+target = NodePath("../player")

@@ -14,6 +14,10 @@ config/name="JibbyJam0"
 run/main_scene="res://level.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Globals="*res://Globals.tscn"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
