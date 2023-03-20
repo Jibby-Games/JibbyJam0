@@ -8,8 +8,7 @@ var mob = preload("res://enemy.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	player_pawn = get_parent().get_node("player")
-
+	player_pawn = get_parent().get_node("camera")
 
 func _on_mob_spawner_timeout():
 	if player_pawn == null:

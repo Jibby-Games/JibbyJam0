@@ -25,11 +25,15 @@ func add_trauma(amount):
 
 
 func _process(delta):
-	if target:
-		global_position = get_node(target).global_position
+	if target != null:
+		var got_target = get_node(target)
+		if got_target == null:
+			return
+		global_position = got_target.global_position
 	if trauma:
 		trauma = max(trauma - decay * delta, 0)
 		shake()
+
 
 func shake():
 	var amount = pow(trauma, trauma_power)
