@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/euphoria-x1.6speed.mp3-0d6e3e55e11b50240fb2a199cd11f0e7.mp3str"
+
+[deps]
+
+source_file="res://music/euphoria-x1.6speed.mp3"
+dest_files=[ "res://.import/euphoria-x1.6speed.mp3-0d6e3e55e11b50240fb2a199cd11f0e7.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

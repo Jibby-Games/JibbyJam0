@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/shephard tone.mp3-738b5145b90fe483d9c6c28a431a0303.mp3str"
+
+[deps]
+
+source_file="res://music/shephard tone.mp3"
+dest_files=[ "res://.import/shephard tone.mp3-738b5145b90fe483d9c6c28a431a0303.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
