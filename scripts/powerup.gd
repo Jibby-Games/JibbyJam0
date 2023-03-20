@@ -6,7 +6,7 @@ var num_upgrade_options = 3
 
 var speed_bump = 10
 var accel_bump = 0.05
-var reload_mult = 0.95
+var reload_mult = 0.9
 
 
 func _ready():
