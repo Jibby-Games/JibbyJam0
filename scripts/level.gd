@@ -7,6 +7,7 @@ var restart_label
 var player_char
 var camera
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player_pawn = get_node("player")

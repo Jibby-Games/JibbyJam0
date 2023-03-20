@@ -1,6 +1,11 @@
 extends Timer
 
 var spawn_distance = 1000
+var timeout_count = 0
+
+var min_spawn = 1.0
+var max_spawn = 15.0
+var drop_rate = 0.75
 
 var player_pawn
 
@@ -24,3 +29,7 @@ func _on_mob_spawner_timeout():
 
 
 	get_parent().add_child(enemy)
+
+	timeout_count += 1
+
+	self.wait_time = min_spawn + max_spawn * exp(-drop_rate * timeout_count)
