@@ -22,6 +22,4 @@ func _process(delta):
 	
 	if death_label.visible:
 		if Input.is_action_pressed("shoot"):
-			var new_player = player_char.instance()
-			
-			add_child(new_player)
+			get_tree().change_scene("res://level.tscn")
