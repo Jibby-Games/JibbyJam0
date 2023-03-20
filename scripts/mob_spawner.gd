@@ -3,9 +3,9 @@ extends Timer
 var spawn_distance = 1000
 var timeout_count = 0
 
-var min_spawn = 1.0
+var min_spawn = 2.0
 var max_spawn = 15.0
-var drop_rate = 0.75
+var drop_rate = 0.9
 
 var player_pawn
 
