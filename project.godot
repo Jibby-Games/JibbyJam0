@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="JibbyJam0"
-run/main_scene="res://level.tscn"
+run/main_scene="res://LaunchScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]

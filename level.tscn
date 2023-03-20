@@ -22,7 +22,8 @@ wait_time = 5.0
 autostart = true
 script = ExtResource( 2 )
 
-[connection signal="timeout" from="mob_spawner" to="mob_spawner" method="_on_mob_spawner_timeout"]
 [node name="camera" parent="." instance=ExtResource( 4 )]
 current = true
 target = NodePath("../player")
+
+[connection signal="timeout" from="mob_spawner" to="mob_spawner" method="_on_mob_spawner_timeout"]
