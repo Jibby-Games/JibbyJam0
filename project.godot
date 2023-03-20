@@ -17,10 +17,18 @@ config/icon="res://icon.png"
 [autoload]
 
 Globals="*res://Globals.tscn"
+Sounds="*res://Sounds.tscn"
 
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+
+[importer_defaults]
+
+mp3={
+"loop": false,
+"loop_offset": 0
+}
 
 [input]
 

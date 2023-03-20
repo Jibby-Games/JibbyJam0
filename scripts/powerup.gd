@@ -28,6 +28,8 @@ func upgrade_reload():
 	print("Reload time is now ", player_pawn.reload_time)
 
 func _on_powerup_body_entered(body:Node) -> void:
+	Sounds.play("res://sounds/Eat_Up.mp3")
+	Sounds.play("res://sounds/PowerUp.mp3")
 	queue_free()
 
 	var choice = randi() % num_upgrade_options

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Death_Gurgle.mp3-1df154f4e813d0631e3232e230c14c57.mp3str"
+
+[deps]
+
+source_file="res://sounds/Death_Gurgle.mp3"
+dest_files=[ "res://.import/Death_Gurgle.mp3-1df154f4e813d0631e3232e230c14c57.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

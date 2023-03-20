@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Dont_do_it.mp3-47a294ef93f0f5f549fecd0c7ded4d12.mp3str"
+
+[deps]
+
+source_file="res://sounds/Dont_do_it.mp3"
+dest_files=[ "res://.import/Dont_do_it.mp3-47a294ef93f0f5f549fecd0c7ded4d12.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

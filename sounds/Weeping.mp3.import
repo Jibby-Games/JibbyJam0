@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Weeping.mp3-f00481c44483d22720fd38e6a2e1860e.mp3str"
+
+[deps]
+
+source_file="res://sounds/Weeping.mp3"
+dest_files=[ "res://.import/Weeping.mp3-f00481c44483d22720fd38e6a2e1860e.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

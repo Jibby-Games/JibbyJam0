@@ -39,6 +39,7 @@ func _physics_process(delta):
 
 
 func player_died():
+	Sounds.play("res://sounds/Squelch.mp3")
 	print("Player has died!")
 
 	queue_free()
@@ -48,6 +49,7 @@ func shoot():
 	owner.add_child(b)
 	b.transform = $Muzzle.global_transform
 	Globals.camera.add_trauma(0.3)
+	Sounds.play("res://sounds/Pew.mp3")
 
 
 func _on_Area2D_body_entered(body):
