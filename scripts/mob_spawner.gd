@@ -12,14 +12,16 @@ func _ready():
 
 
 func _on_mob_spawner_timeout():
+	if player_pawn == null:
+		return
+
 	var enemy = mob.instance()
-	
-	var angle = randf() * 2.0 * 3.14159
-	var center = player_pawn.position
-	
+	var angle = randf() * TAU
+	var center = player_pawn.global_position
+
 	var spawn_loc = (Vector2(cos(angle), sin(angle)) * spawn_distance) + center
 
-	enemy.position = spawn_loc
+	enemy.global_position = spawn_loc
 
-	
+
 	get_parent().add_child(enemy)
