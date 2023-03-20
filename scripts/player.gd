@@ -1,9 +1,11 @@
 extends KinematicBody2D
 
 export var speed = 200
-export var friction = 0.01
-export var acceleration = 0.1
 export var reload_time = 0.5
+
+export var acceleration = 0.1
+export var friction = 0.01
+
 export(PackedScene) var bullet = preload("res://bullet.tscn")
 
 var velocity = Vector2()
