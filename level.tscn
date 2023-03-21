@@ -57,6 +57,7 @@ autostart = true
 script = ExtResource( 6 )
 
 [node name="mob_spawner" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 script = ExtResource( 2 )
 

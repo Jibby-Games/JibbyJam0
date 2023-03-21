@@ -3,9 +3,9 @@ extends Timer
 var spawn_distance = 1000
 var timeout_count = 0
 
-var min_spawn = 2.0
+var min_spawn = 0.25
 var max_spawn = 15.0
-var drop_rate = 0.9
+var drop_rate = 0.05
 
 var player_pawn
 
@@ -32,4 +32,8 @@ func _on_mob_spawner_timeout():
 
 	timeout_count += 1
 
-	self.wait_time = min_spawn + max_spawn * exp(-drop_rate * timeout_count)
+	self.wait_time -= drop_rate
+	if self.wait_time < min_spawn:
+		self.wait_time = min_spawn
+	
+	print("Wait time: ", self.wait_time)
